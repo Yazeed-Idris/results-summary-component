@@ -1,0 +1,226 @@
+:root {
+    /* Primary */
+    --color-light-red: hsl(0, 100%, 67%);
+    --color-light-red-accent: #fdf4f4;
+    --color-orangey-yellow: hsl(39, 100%, 56%);
+    --color-orangey-yellow-accent: #fdf9f1;
+    --color-green-teal: hsl(166, 100%, 37%);
+    --color-green-teal-accent: #f0f8f9;
+    --color-cobalt-blue: hsl(234, 85%, 45%);
+    --color-cobalt-blue-accent: #f1f1fc;
+
+    /* Gradients */
+    --color-light-slate-blue: hsl(252, 100%, 67%); /* background */
+    --color-light-royal-blue: hsl(241, 81%, 54%); /* background */
+
+    --color-violet-blue: hsla(256, 72%, 46%, 1); /* circle */
+    --color-persian-blue: hsla(241, 72%, 46%, 0); /* circle */
+
+    /* Neutral */
+    --color-white: hsl(0, 0%, 100%);
+    --color-pale-blue: hsl(221, 100%, 96%);
+    --color-light-lavender: hsl(241, 100%, 89%);
+    --color-dark-gray-blue: hsl(224, 30%, 27%);
+
+    --break-point: 1440px;
+
+}
+
+* {
+  margin: 0;
+    font-family: HankenGrotesk, sans-serif;
+}
+
+html, body, main {
+    height: 100%;
+}
+
+main {
+    display: grid;
+    place-items: center;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 2rem;
+
+}
+
+.results-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(var(--color-light-slate-blue), var(--color-light-royal-blue));
+    color: var(--color-white);
+    display: grid;
+    grid-template-rows: fit-content(1fr) fit-content(1fr) fit-content(1fr);
+    gap: 2rem;
+    place-items: center;
+    text-align: center;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.results-section h3 {
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.circle {
+    border-radius: 50%;
+    background: linear-gradient(var(--color-violet-blue) 15%, var(--color-persian-blue));
+    padding: 1.5rem 2.5rem;
+}
+
+.circle p {
+    color: var(--color-light-lavender);
+    opacity: 0.5;
+    font-size: 0.9rem;
+}
+
+.message-wrapper h2 {
+    margin-bottom: 1rem;
+}
+
+.message-wrapper p {
+    color: var(--color-light-lavender);
+    font-weight: 500;
+    margin: 0 2.5rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.summary-section {
+    padding: 1.5rem;
+    color: var(--color-dark-gray-blue);
+    flex-grow: 1;
+}
+
+span {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.outof-100 {
+    opacity: 0.5;
+}
+
+.summary-section ul {
+    list-style: none;
+    padding: 0;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+li h4 {
+    display: flex;
+    align-items: center;
+}
+
+li img {
+    margin-right: 0.5rem;
+}
+
+li[data-item-name="reaction"] h4 {
+    color: var(--color-light-red);
+}
+
+li[data-item-name="reaction"] {
+    background-color: var(--color-light-red-accent);
+    border-radius: 10px;
+}
+
+li[data-item-name="memory"] h4 {
+    color: var(--color-orangey-yellow);
+}
+
+li[data-item-name="memory"] {
+    background-color: var(--color-orangey-yellow-accent);
+    border-radius: 10px;
+}
+
+li[data-item-name="verbal"] h4 {
+    color: var(--color-green-teal);
+}
+
+li[data-item-name="verbal"] {
+    background-color: var(--color-green-teal-accent);
+    border-radius: 10px;
+}
+
+li[data-item-name="visual"] h4 {
+    color: var(--color-cobalt-blue);
+}
+
+li[data-item-name="visual"] {
+    background-color: var(--color-cobalt-blue-accent);
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    background: var(--color-dark-gray-blue);
+    border: none;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 2rem;
+}
+
+button:active {
+    background: linear-gradient(var(--color-light-slate-blue), var(--color-light-royal-blue));
+}
+
+@font-face {
+    font-family: 'HankenGrotesk';
+    src: url('assets/fonts/static/HankenGrotesk-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'HankenGrotesk';
+    src: url('assets/fonts/static/HankenGrotesk-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'HankenGrotesk';
+    src: url('assets/fonts/static/HankenGrotesk-ExtraBold.ttf');
+    font-weight: 800;
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+       max-width: 800px;
+        display: flex;
+        height: fit-content;
+        justify-content: center;
+    }
+
+    .results-section {
+        max-width: 400px;
+        border-radius: 2rem 2rem 2rem 2rem;
+    }
+
+}
